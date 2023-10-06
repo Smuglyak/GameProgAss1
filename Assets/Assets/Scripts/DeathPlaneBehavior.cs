@@ -20,17 +20,9 @@ public class DeathPlaneBehavior : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other){
+    public void OnTriggerEnter(Collider other){        
         if(other.name == "Player"){
-            originalPlayerPosition = Player.transform.position;
-        }
-    }
-
-    public void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag == "Player") {
-        
-        Player.transform.position = originalPlayerPosition;
+            GameManager.Instance.Restart();
         }
     }
 

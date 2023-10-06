@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(Instance);
     }
 
+    public void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void IncrementScore()
     {
         // TODO Increment score logic and win condition 
@@ -30,7 +38,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(Score);   
         if(Score >= 150)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            NextLevel();
         }
     }
 

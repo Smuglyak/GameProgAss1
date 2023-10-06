@@ -17,11 +17,15 @@ public class PowerUp : MonoBehaviour
             // Destroy Pickup 
            // Destroy(gameObject);
             gameObject.SetActive(false);
-            Invoke("Reappear", 2.0f);
+            Invoke("Reappear", 30.0f);
         }
     }
 
     void Reappear(){
-        gameObject.SetActive(true);        
+        gameObject.SetActive(true);         
+    }
+
+    void Update(){
+        transform.Rotate(new Vector3(0f, 0f, 100f) * Time.deltaTime);
     }
 }
